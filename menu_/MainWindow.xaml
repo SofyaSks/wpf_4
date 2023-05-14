@@ -1,0 +1,41 @@
+﻿<Window x:Class="menu_.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:menu_"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <DockPanel>
+    <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_File">
+                <MenuItem Header="_New" Click="FileNew_Click">
+                    <MenuItem.Icon>
+                        <Image Source="https://cdn-icons-png.flaticon.com/512/169/169262.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Open..." InputGestureText="CTRL+O"/>
+                <MenuItem Header="_Save"/>
+                <MenuItem Header="_Save as..."/>
+                <Separator/>
+                <MenuItem Header="Exit"/>
+            </MenuItem>
+        </Menu>
+
+        <ToolBar DockPanel.Dock="Top">
+            <Button Click="FileNew_Click">
+                <Image Height ="32" Width="32" Source="https://cdn-icons-png.flaticon.com/512/169/169262.png"/>
+            </Button>
+        </ToolBar>
+
+        <TextBox x:Name="textb" AcceptsReturn="True" AcceptsTab="True">
+            <TextBox.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Cut"/>
+                    <MenuItem Header="Copy"/>
+                    <MenuItem Header="Paste"/>
+                </ContextMenu>
+            </TextBox.ContextMenu>
+        </TextBox>
+    </DockPanel>
+</Window>
